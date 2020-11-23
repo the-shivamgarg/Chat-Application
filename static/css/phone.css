@@ -45,6 +45,7 @@
 .list-members {
     height: fit-content;
     border-radius: 13px;
+    overflow-y: unset;
 }
 
 .hide-list {
@@ -53,6 +54,7 @@
 
 #online-members {
     height: fit-content;
+    overflow-y: auto;
     max-height: 288px;
     border-radius: 13px;
     border: 2px solid black;

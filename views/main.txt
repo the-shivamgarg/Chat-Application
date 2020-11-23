@@ -24,7 +24,7 @@
     </nav>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
         Access the source code from my github
-        <a href="https://github.com/the-shivamgarg">@the-shivamgarg</a>
+        <a href="https://github.com/the-shivamgarg/Chat-Application">@the-shivamgarg</a>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

@@ -1,4 +1,4 @@
-const socket = io('http://192.168.0.102:8000');
+const socket = io('http://localhost:8000');
 
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
