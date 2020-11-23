@@ -1,0 +1,63 @@
+#content {
+    flex-direction: column;
+}
+
+#online-members-container {
+    width: 100%;
+}
+
+#chat-container {
+    width: 100%;
+}
+
+#chat-box {
+    height: 65vh;
+}
+
+.send-message {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #555;
+}
+
+#h-box {
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 13px;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.online-user {
+    padding: 10px 0;
+}
+
+.list-members {
+    height: fit-content;
+    border-radius: 13px;
+}
+
+.hide-list {
+    display: none;
+}
+
+#online-members {
+    height: fit-content;
+    max-height: 288px;
+    border-radius: 13px;
+    border: 2px solid black;
+}
+
+.user-messageright, .user-messageleft {
+    max-width: 50%;
+}
