@@ -2,14 +2,28 @@ const express = require("express");
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
+const fs = require('fs');
+const https = require('https');
 const pug = require('pug');
-const io = require('socket.io')(8000);
+
+// For SSL
+var options = {
+    key: fs.readFileSync('/etc/letsencrypt/live/example.com/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/example.com/cert.pem'),
+    ca: fs.readFileSync('/etc/letsencrypt/live/example.com/chain.pem')
+};
+//Creating socket.io server
+const server = https.createServer(options).listen(8000);
+const io = require('socket.io')(server);
 
 mongoose.connect('mongodb://localhost/ichatdb', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 const nameSchema = new mongoose.Schema({
     name: String
+});
+app.listen(5000,()=>{
+    console.log("Server is running on port 5000");
 });
 const namemodel = mongoose.model('username', nameSchema);
 
@@ -24,10 +38,6 @@ app.get("/", (req, res) => {
         let jsonobj = JSON.stringify(username);
         res.status(200).render("main.pug", { "mongodoc": jsonobj });
     });
-});
-
-app.listen(80, () => {
-    console.log("Server is running on Port 80");
 });
 
 const users = {};
@@ -65,7 +75,7 @@ io.on('connection', (socket) => {
                     'name': users[socket.id],
                     'onlinelist': newdocument
                 };
-                
+
                 socket.broadcast.emit("user-left", newlist);
                 delete users[socket.id];
             });

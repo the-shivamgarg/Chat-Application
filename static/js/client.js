@@ -1,10 +1,9 @@
-const socket = io('http://localhost:8000');
+const socket = io('https://www.example.com:8000', { secure: true });
 
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 const username = prompt('Enter Your Name To Join The Chat').capitalize();
-
 
 const messagecontainer = document.querySelector("#chat-box");
 const form = document.getElementById("send-container");

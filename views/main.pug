@@ -9,18 +9,13 @@ html
         link(rel="stylesheet" media="screen and (max-width: 640px)" href="/css/phone.css")
         link(rel="preconnect" href="https://fonts.gstatic.com")
         link(href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Kanit:wght@500&family=Roboto&display=swap" rel="stylesheet")
-        script(defer src="http://localhost:8000/socket.io/socket.io.js")
-        script(defer src="/js/client.js")
-        script(defer src="/js/resp.js")
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     body
         nav
             img(src="/img/logo.png", alt="logo")
             h2 iChat Application
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             |Access the source code from my github 
-            a(href="https://github.com/the-shivamgarg/Chat-Application") @the-shivamgarg
+            a(href="https://github.com/the-shivamgarg/Chat-Application" target="_blank") @the-shivamgarg
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -40,5 +35,10 @@ html
                         button#btn(type = "submit")
                             img(src="/img/send.png", alt="Send",)
         script let paramname = `!{mongodoc}`;
+        script(src="https://www.example.com:8000/socket.io/socket.io.js")
+        script(src="/js/client.js")
+        script(src="/js/resp.js")
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 
